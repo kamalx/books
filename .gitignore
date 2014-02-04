@@ -1,0 +1,30 @@
+# Directories to ignore
+*/
+# Directories to exclude
+!templates/
+!css/
+# Common shit to ignore
+.git
+*~
+~*
+*.pyc
+*.tmp
+*.swp
+*.bak
+*.orig
+*.DS_Store
+*.dmg
+*.so
+*.coverage
+/.idea/
+# Xcode stuff 
+*.xccheckout
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+# Since this is specifically for my books folder,
+# Ignore all popular books formats I have.
+*.mobi
+*.pdf
+*.epub
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 
+== http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/webtemplates.html 
+== http://kagerato.net/articles/software/libraries/jinja-quickstart.html
+== http://jinja.pocoo.org/docs/
+== Learned this kung-fu from above locations
+-->
+<link rel='stylesheet' type='text/css' href='css/flatly.css'>
+<title>{{ title }}</title>
+<style>
+.text-info.small { font-size: smaller; opacity:0.9; color: #666 !important; }
+/* ul li .lead {font-style:italic;font-family:serif;font-size:larger;float:left;}
+*/
+</style>
+</head>
+<body>
+<div class='container'>
+    <h1>{{ title }}</h1>
+    <div class='row'>
+   {% for key in list %}
+   <div id='{{ key }}' class='col-md-4'>
+        <h2>{{ key }}</h2>
+        <ul class='list-unstyled'>
+        {% for item in list[key] %}
+            <li><span class='lead'>{{ loop.index }}</span> <a href='{{ item.url }}'>{{ item.name }}</a><br>
+                <span class='muted'>
+                    <ul>
+                    {% for ki in item.info %}
+                        <li class='text-info small'><small><strong>{{ ki }}:</strong> 
+                            {{- item.info[ki] -}}
+                        </small></li>
+                    {% endfor %}
+                    </ul>
+                </span>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endfor %} 
+    </div>
+</div>
+</body>
+</html>
