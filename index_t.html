@@ -24,15 +24,17 @@
         <h2>{{ key }}</h2>
         <ul class='list-unstyled'>
         {% for item in list[key] %}
-            <li><span class='lead'>{{ loop.index }}</span> <a href='{{ item.url }}'>{{ item.name }}</a><br>
-                <span class='muted'>
-                    <ul>
+            <li><span class='lead'>{{ loop.index }}</span> <span class=lead>{{ item.name }}</span><br>
+                <a class='btn btn-xs btn-default' href='{{ item.url }}' title='Download {{ item.name|escape }}'>Download <i class='download'></i></a>
+                <span class='text-muted'>
+                    <table class='table table-striped table-condensed table-bordered'><tbody>
                     {% for ki in item.info %}
-                        <li class='text-info small'><small><strong>{{ ki }}:</strong> 
-                            {{- item.info[ki] -}}
-                        </small></li>
+                        <tr class='text-info small'>
+                            <td><small><strong>{{ ki|capitalize }}:</strong></small></td>
+                            <td><small>{{- item.info[ki] -}}</small></td>
+                        </tr>
                     {% endfor %}
-                    </ul>
+                    </tbody></table>
                 </span>
             </li>
         {% endfor %}
