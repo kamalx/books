@@ -1,6 +1,7 @@
 #! /usr/bin/python
 
 import os
+from collections import OrderedDict
 from pdf_info import get_pdf_info
 from epub_info import get_epub_info
 
@@ -11,7 +12,8 @@ def list_all( types ):
     returns dict with lists corresponding to each of the types
     '''
     
-    the_list = {}
+    the_list = OrderedDict.fromkeys( types )
+
     for t in types:
         x = []
         for root, dirs, files in os.walk('./'):

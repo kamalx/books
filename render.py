@@ -5,7 +5,7 @@ from jinja2 import Environment, FileSystemLoader
 env = Environment(loader=FileSystemLoader('.'))
 TEMPLATEFILE='index_t.html'
 template = env.get_template( TEMPLATEFILE )
-types = ['epub', 'mobi', 'pdf']
+types = ['epub', 'pdf', 'mobi']
 template_var = list_all( types )
 OUTPUTFILENAME='index.html'
 
