@@ -1,0 +1,12 @@
+# Requirements for books to list the books and their secrets. 
+# Working with Python 2.7.3+
+
+# jinja2 - the templating engine 
+jinja2
+
+# pyPdf - read pdf meta data
+pyPdf
+
+# lxml - to read epub; since epub files contain xml data.
+lxml
+
