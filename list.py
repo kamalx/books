@@ -11,7 +11,7 @@ def list_all( types ):
     syntax: list_all(['type1', 'type2', ...])
     returns dict with lists corresponding to each of the types
     '''
-    
+
     the_list = OrderedDict.fromkeys( types )
 
     for t in types:
@@ -20,7 +20,7 @@ def list_all( types ):
             for name in files:
                 if( name.endswith( t ) ):
                     url = os.path.join( root, name )
-                    print "[ %s ]: Attempting to collect metadata..." % (name)
+                    print("[ %s ]: Attempting to collect metadata..." % (name))
                     ## XXX: Yet to figure out reading .mobi metadata...
                     ## XXX: PDF metadata is a mess. :/
                     if t == 'pdf':
@@ -30,12 +30,12 @@ def list_all( types ):
                             info = get_pdf_info(url)
                             # print info[0]
                         except:
-                            print " Failed to get the meta info for this PDF file. :("
+                            print(" Failed to get the meta info for this PDF file. :(")
                     elif t == 'epub':
                         try:
                             info = get_epub_info(url)
-                        except: 
-                            print " Failed to get the meta info for this EPUB file. :("
+                        except:
+                            print(" Failed to get the meta info for this EPUB file. :(")
                     else:
                         info = {'Name': name, 'meta': 'unkown'}
                     x.append( {'url':url, 'name':name, 'info':info} )

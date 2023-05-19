@@ -10,13 +10,13 @@ template_var = list_all( types )
 OUTPUTFILENAME='index.html'
 
 html=template.render( template_var )
-print "Writing HTML to " + OUTPUTFILENAME + "..."
-print "===================================================="
+print("Writing HTML to " + OUTPUTFILENAME + "...")
+print("====================================================")
 # print html
 
 with open(OUTPUTFILENAME, "wb") as handle:
     ## All we needed was .encode('utf-8')
     ## <http://stackoverflow.com/a/18268929/699556>
     handle.write( html.encode('utf-8') )
-print "Done."
-print "===================================================="
+print("Done.")
+print("====================================================")

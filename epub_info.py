@@ -27,7 +27,7 @@ def get_epub_info(fname):
         try:
             res[s] = p.xpath('dc:%s/text()'%(s),namespaces=ns)[0]
         except:
-            print "The key %s not found in %s" % (s, fname)
+            print("The key %s not found in %s" % (s, fname))
             res[s] = "Unknown"
 
     return res
