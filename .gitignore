@@ -27,4 +27,5 @@ xcuserdata/
 *.mobi
 *.pdf
 *.epub
-
+# Also ignore the output file
+index.html
